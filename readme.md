@@ -5,3 +5,5 @@ Run
 npm i
 
 npm run start
+
+and done...
