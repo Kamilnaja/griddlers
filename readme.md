@@ -1,4 +1,4 @@
-Webpack with configured ts
+Webpack with configured Typescript.
 
 Run 
 
