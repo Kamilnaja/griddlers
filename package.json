@@ -4,8 +4,10 @@
   "description": "",
   "main": "webpack.config.js",
   "dependencies": {
+    "ts-loader": "^4.4.2",
     "typescript": "^2.6.1",
-    "ts-loader": "^4.4.2"
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1"
   },
   "devDependencies": {},
   "scripts": {
