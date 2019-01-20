@@ -9,7 +9,9 @@
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "tslint": "^5.12.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch --mode=development"
