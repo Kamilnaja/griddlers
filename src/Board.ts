@@ -16,14 +16,25 @@ export class Board {
 
     picture.forEach((cell) => {
       this.ctx.lineWidth = 2;
-      this.ctx.strokeStyle = "#FF0000";
-      this.ctx.fillStyle = "white";
+      this.ctx.strokeStyle = "grey";
       let heightOverlap = 0;
-      cell.forEach(() => {
-        this.ctx.strokeRect(widthOverlap, heightOverlap, cellSize, cellSize);
+
+      cell.forEach((v) => {
+        this.fillCell(heightOverlap, widthOverlap, cellSize, !!v);
         heightOverlap = heightOverlap + cellSize;
       });
       widthOverlap = widthOverlap + cellSize;
     });
+  }
+
+  private fillCell(
+    widthOverlap: number,
+    heightOverlap: number,
+    cellSize: number,
+    isEmpty: boolean
+  ) {
+    this.ctx.fillStyle = isEmpty ? "black" : "white";
+    this.ctx.fillRect(widthOverlap, heightOverlap, cellSize, cellSize);
+    this.ctx.strokeRect(widthOverlap, heightOverlap, cellSize, cellSize);
   }
 }

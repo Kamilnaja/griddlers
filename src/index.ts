@@ -1,10 +1,10 @@
 import { Board } from "./Board";
-import { data } from "./data";
+import { one, three, two } from "./data";
 
 const canvas = <HTMLCanvasElement>document.getElementById("canvas");
 
 const ctx = canvas.getContext("2d");
-const pic1 = data;
+const picture = three;
 
 const b = new Board(ctx);
-b.drawTable(pic1);
+b.drawTable(picture);
