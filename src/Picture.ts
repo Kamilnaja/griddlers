@@ -1,3 +1,3 @@
-import { CellModel } from "./cellModel";
+import { Cell } from "./cellModel";
 
-export type Picture = CellModel[];
+export type Picture = Cell[];
