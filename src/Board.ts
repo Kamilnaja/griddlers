@@ -1,3 +1,4 @@
+import { Cell, CellValue } from "./Cell";
 import { Picture } from "./Picture";
 
 export class Board {
@@ -38,5 +39,21 @@ export class Board {
     this.ctx.strokeRect(widthOverlap, heightOverlap, cellSize, cellSize);
   }
 
-  private countConsecutiveCells() {}
+  countConsecutiveCells(row: CellValue[]): number[] {
+    let res = [];
+    let temp = 0;
+
+    row.forEach((item) => {
+      if (item) {
+        temp++;
+      } else {
+        temp && res.push(temp);
+        temp = 0;
+      }
+    });
+    temp && res.push(temp);
+    console.log(res);
+
+    return res;
+  }
 }
