@@ -37,4 +37,6 @@ export class Board {
     this.ctx.fillRect(widthOverlap, heightOverlap, cellSize, cellSize);
     this.ctx.strokeRect(widthOverlap, heightOverlap, cellSize, cellSize);
   }
+
+  private countConsecutiveCells() {}
 }
