@@ -1,4 +1,4 @@
-import { Cell, CellValue } from "./Cell";
+import { CellValue } from "./Cell";
 import { Picture } from "./Picture";
 
 export class Board {
@@ -8,17 +8,24 @@ export class Board {
     var canvas = <HTMLCanvasElement>document.getElementById("canvas");
     const { width, height } = canvas;
     let minorDimention = width > height ? height : width;
-    return minorDimention / picture.length;
+    return (minorDimention / picture.length / picture.length) * 2;
   }
 
   drawTable(picture: Picture): void {
     const cellSize = this.calculateCellSize(picture);
     let widthOverlap = 0;
 
+    picture.forEach((item, i) => {
+      const arr = [];
+      picture.forEach((cell) => arr.push(cell[i]));
+    });
+
     picture.forEach((cell) => {
       this.ctx.lineWidth = 2;
       this.ctx.strokeStyle = "grey";
       let heightOverlap = 0;
+      // from left to right
+      // console.log(this.countConsecutiveCells(cell));
 
       cell.forEach((v) => {
         this.fillCell(heightOverlap, widthOverlap, cellSize, !!v);
@@ -52,7 +59,6 @@ export class Board {
       }
     });
     temp && res.push(temp);
-    console.log(res);
 
     return res;
   }
